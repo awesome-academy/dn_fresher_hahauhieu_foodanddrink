@@ -10,7 +10,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
         log_in user
         get :index
       end
-      
+
       it "assigns orders" do
         expect(assigns(:orders).count).to eq(orders.count)
       end
@@ -45,7 +45,7 @@ RSpec.describe Admin::OrdersController, type: :controller do
 
       before do
         log_in user
-        request.headers.merge! referer: stub_referer    
+        request.headers.merge! referer: stub_referer
         patch :update, params: {
           id: order.id,
           status: "2"
