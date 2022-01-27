@@ -58,18 +58,6 @@ vi:
   hello: "Hello world"
   log_in: "Đăng nhập"
   sign_up: "Đăng ký"
-  sessions:
-    new:
-      email_req: "Định dạng email bắt buộc: ex@abc.xyz"
-      password_req: "Mật khẩu không được để trống"
-      password: "Mật khẩu"
-      email: "Email"
-      remember_me: "Lưu thông tin"
-      forgot_password: "Quên mật khẩu?"
-      logout: "Đăng xuất"
-    create:
-      login_success: "Đăng nhập thành công!!!"
-      login_fail: "Đăng nhập thất bại!!!"
   errors:
     not_found: "Không tìm thấy!!!"
     not_found_product: "Không tìm thấy sản phẩm!!!"
@@ -225,3 +213,34 @@ vi:
       total_price_item: "Tổng giá sản phẩm"
       close: "Đóng"
       total_price: "Tổng giá thanh toán"
+  devise:
+    sessions:
+      new:
+        email: "Email"
+        password: "Mật khẩu"
+        remember_me: "Lưu thông tin"
+    registrations:
+      new:
+        password: "Mật khẩu"
+        password_confirmation: "Nhập lại mật khẩu"
+        email: "Email"
+        name: "Họ và tên"
+        already_account: "Đã có tài khoản"
+      edit:
+        cancel_account_message: "Bạn có chắc muốn hủy bỏ tài khoản?"
+        password: "Mật khẩu"
+        password_confirmation: "Nhập lại mật khẩu"
+        current_password: "Mật khẩu hiện tại"
+        email: "Email"
+        name: "Họ và tên"
+        edit: "Edit"
+        cancel_account: "Hủy tài khoản"
+        back: "Trở lại"
+        update: "Cập nhật"
+        edit: "Chỉnh sửa"
+    shared:
+      links:
+        forgot_pass: "Quên mật khẩu?"
+        not_receive_confirmation_instructions: "Không nhận được hướng dẫn xác nhận?"
+        not_receive_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
+        sign_in_with: "Đăng nhập bằng"

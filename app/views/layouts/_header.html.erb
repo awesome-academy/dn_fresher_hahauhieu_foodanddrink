@@ -21,27 +21,24 @@
                 <li><%= link_to t(".vietnamese"), locale: :vi %></li>
               </ul>
             </div>
-            <% if logged_in? %>
+            <% if current_user.present? %>
               <div class="header__top__right__language">
-                <%= link_to current_user.fullname, current_user %>
+                <%= link_to current_user.fullname, current_user, class: "fa fa-user" %>
                 <span class="arrow_carrot-down"></span>
                 <ul>
                   <li><%= link_to t(".history"), current_user %></li>
-                  <li><%= link_to t(".settings"), "#" %></li>
+                  <li><%= link_to t(".settings"), user_registration_path, method: :patch %></li>
                 </ul>
               </div>
               <div class="header__top__right__auth">
-                <%= link_to logout_path, method: :delete do %>
-                  <i class="bi bi-box-arrow-left text-dark"></i>
-                  <%= t(".logout") %>
-                <% end %>
+                <%= link_to  t(".logout"), logout_path, method: :delete, class: "fa fa-sign-out" %>
               </div>
             <% else %>
+              <div class="header__top__right__language">
+                <%= link_to t(".login"), login_path, class: "fa fa-sign-in" %>
+              </div>
               <div class="header__top__right__auth">
-                <%= link_to login_path do %>
-                  <i class="fa fa-user text-dark"></i>
-                  <%= t(".login") %>
-                <% end %>
+                <%= link_to t("sign up"), signup_path, class: "fa fa-user-plus" %>
               </div>
             <% end %>
           </div>

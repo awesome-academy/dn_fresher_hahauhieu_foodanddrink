@@ -12,4 +12,8 @@ module ApplicationHelper
     index_loop + Settings.number.digit_1 +
       (param_pages.to_i - Settings.number.digit_1) * Settings.per_page_10
   end
+
+  def attribute_error_message attr, msg
+    "(*) #{attr.to_s.split(/[._]/).join(' ')} #{msg}"
+  end
 end

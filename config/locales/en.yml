@@ -58,18 +58,6 @@ en:
   hello: "Hello world"
   sign_up: "Sign Up"
   log_in: "Sign in"
-  sessions:
-    new:
-      email: "Email"
-      email_req: "Valid email is required: ex@abc.xyz"
-      password: "Password"
-      password_req: "Password is required"
-      remember_me: "Remember Me"
-      forgot_password: "Forgot Password?"
-      logout: "Logout"
-    create:
-      login_success: "Login success!!!"
-      login_fail: "Login fail!!!"
   errors:
     not_found: "Not Found!!!"
     not_found_product: "Not Found Product!!!"
@@ -230,3 +218,57 @@ en:
       total_price_item: "Total pricee item"
       close: "Close"
       total_price: "Total price"
+  devise:
+    mailer:
+      confirmation_instructions:
+        confirm_my_account: "Confirm my account"
+        welcome: "Welcome"
+        confirm_your_account: "You can confirm your account email through the link below:"
+      email_changed:
+        hello: "Hello"
+        contacting_you_to: "We're contacting you to notify you that your email is being changed to"
+      password_change:
+        hello: "Hello"
+        contacting_you_to: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        someone_has_requested: "Someone has requested a link to change your password. You can do this through the link below."
+        change_my_password: "Change my password"
+        confirm: "If you didn't request this, please ignore this email."
+        remind: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        click_the_link: "Click the link below to unlock your account:"
+        remind: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        unlock_my_account: "Unlock my account"
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
+    sessions:
+      new:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+    registrations:
+      new:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        name: "Fullname"
+        already_account: "Already account"
+      edit:
+        cancel_account_message: "Are you want cancel your account?"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current password"
+        email: "Email"
+        name: "Fullname"
+        cancel_account: "Cancel my account"
+        back: "Back"
+        update: "Update"
+        edit: "Edit"
+    shared:
+      links:
+        forgot_pass: "Forgot your password?"
+        not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+        not_receive_unlock_instructions: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with"
