@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, :correct_user, only: :show
+  before_action :authenticate_user!, :correct_user, only: :show
 
   def show
     @pagy, @user_orders = pagy(@current_user.orders.sort_orders,

@@ -1,6 +1,18 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {host: ENV["USER_HOST"] }
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    user_name: ENV["USER_EMAIL"],
+    password: ENV["USER_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local = true
@@ -42,4 +54,5 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

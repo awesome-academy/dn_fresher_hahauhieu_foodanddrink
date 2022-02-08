@@ -1,10 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale, :load_cart
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   include SessionsHelper
   include Pagy::Backend
 
   private
+
+  def configure_permitted_parameters
+    added_attrs = [:fullname, :email, :password, :password_confirmation,
+      :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -18,13 +26,5 @@ class ApplicationController < ActionController::Base
 
   def load_cart
     session[:cart] ||= {}
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "errors.not_login"
-    redirect_to login_url
   end
 end
