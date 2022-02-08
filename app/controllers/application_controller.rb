@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale, :load_cart
-  before_action :configure_permitted_parameters, if: :devise_controller?
   include SessionsHelper
   include Pagy::Backend
 
@@ -20,9 +19,7 @@ class ApplicationController < ActionController::Base
     session[:cart] ||= {}
   end
 
-  def configure_permitted_parameters
-    added_attrs = [:fullname, :email, :password, :password_confirmation]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  rescue_from CanCan::AccessDenied do
+    redirect_to root_path, alert: t("cancancan.permission_denied")
   end
 end
