@@ -23,7 +23,11 @@
             </div>
             <% if current_user.present? %>
               <div class="header__top__right__language">
-                <%= link_to current_user.fullname, current_user, class: "fa fa-user" %>
+                <% if current_user.admin? %>
+                  <%= link_to current_user.fullname, admin_root_path, class: "fa fa-user" %>
+                <% else %>
+                  <%= link_to current_user.fullname, current_user, class: "fa fa-user" %>
+                <% end %>
                 <span class="arrow_carrot-down"></span>
                 <ul>
                   <li><%= link_to t(".history"), current_user %></li>

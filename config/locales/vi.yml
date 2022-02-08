@@ -200,6 +200,7 @@ vi:
       failed: "Đặt hàng không thành công. Vui lòng kiểm tra và thử lại!"
       success: "Đơn hàng của bạn đã được đặt thành công!"
     show:
+      status: "Trạng thái: "
       order_details: "Chi tiết đơn hàng"
       list_order_details_empty: "Danh sách chi tiết đơn hàng trống!"
       update: "Cập nhật"
@@ -214,6 +215,29 @@ vi:
       close: "Đóng"
       total_price: "Tổng giá thanh toán"
   devise:
+    mailer:
+      confirmation_instructions:
+        confirm_my_account: "Xác nhận tài khoản"
+        welcome: "Chào mừng"
+        confirm_your_account: "Bạn có thể xác nhận email tài khoản của bạn thông qua liên kết bên dưới:"
+      email_changed:
+        hello: "xin chào"
+        contacting_you_to: "Chúng tôi liên lạc với bạn để thông báo rằng email của bạn đã thay đổi sang"
+      password_change:
+        hello: "xin chào"
+        contacting_you_to: "Chúng tôi liên lạc với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi."
+      reset_password_instructions:
+        someone_has_requested: "Có ai đó đã yêu cầu một đường dẫn để thay đổi mật khẩu. Bạn có thể thay dổi mật khẩu thông qua đường dẫn bên dưới."
+        change_my_password: "Thay đổi mật khẩu của tôi"
+        confirm: "Nếu bạn không phải là người yêu cầu. Làm ơn bỏ qua email này."
+        remind: "Mật khẩu của bạn sẽ không bị thay đổi cho đến khi bạn truy cập đường dẫn bên dưới và tạo một mật khẩu mới."
+      unlock_instructions:
+        click_the_link: "Nhấn vào liên kết bên dưới để mở khóa tài khoản của bạn:"
+        remind: "Tài khoản của bạn đã bị khóa do đăng nhập không thành công quá số lần quy định."
+        unlock_my_account: "Mở khóa tài khoản"
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Gửi lại hướng dẫn xác nhận"
     sessions:
       new:
         email: "Email"

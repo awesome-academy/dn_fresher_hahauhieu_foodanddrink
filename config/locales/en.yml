@@ -81,10 +81,6 @@ en:
       price: "Price ($)"
       quantity: "Quantity"
       rating: "Rating"
-      products: "Products"
-      all_products: "All products"
-    all_products:
-      price: "$%{price}"
     show:
       add_cart: "ADD TO CART"
     product:
@@ -197,7 +193,6 @@ en:
       address: "Address"
       order: "YOUR ORDER"
       product: "Products"
-      total: "Total"
       subtotal: "Subtotal"
       checkout: "Checkout"
       please_buy_item: "Please add product to cart"
@@ -205,6 +200,7 @@ en:
       failed: "Order failed. Please check and try again!"
       success: "Your order has been successfully placed!"
     show:
+      status: "Status: "
       order_details: "Orders details"
       list_order_details_empty: "List order details empty!"
       update: "Update"
@@ -272,3 +268,5 @@ en:
         not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
         not_receive_unlock_instructions: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with"
+  cancan:
+    permission_denied: "You are not authorized to access this page."
