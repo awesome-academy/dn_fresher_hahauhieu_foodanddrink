@@ -1,4 +1,5 @@
 class Admin::ProductsController < Admin::BaseController
+  authorize_resource
   def index
     products = Product.newest
     if products.empty?
