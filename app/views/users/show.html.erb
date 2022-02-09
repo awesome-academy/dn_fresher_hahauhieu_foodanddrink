@@ -1,25 +1,16 @@
-<% provide :title, t(".history_orders") %>
+<% provide :title, t(".user_information") %>
 <div class="container">
-  <h1 class="title"><%= t ".history_orders" %></h1>
-  <% if @user_orders.any? %>
+  <h1 class="title"><%= t ".user_information" %></h1>
     <table class="table table-hover">
-      <thead class="text-white" style="background-color:#7FAD39">
-        <tr>
-          <th><%= t ".number" %></th>
-          <th><%= t ".status" %></th>
-          <th><%= t ".created_at" %></th>
-          <th><%= t ".total_price" %></th>
-          <th><%= t ".action" %></th></th>
-        </tr>
-      </thead>
       <tbody>
-        <%= render "history_order" %>
+        <tr>
+          <th><%= t ".name" %></th>
+          <td><%= @current_user.fullname %></th>
+        </tr>
+        <tr>
+          <th><%= t ".email" %></th>
+          <td><%= @current_user.email %></th>
+        </tr>
       </tbody>
     </table>
-    <div class="row justify-content-center">
-      <%== pagy_bootstrap_nav @pagy %>
-    </div>
-  <% else %>
-    <h4 class="text-danger text center"><%= t ".list_orders_empty" %></h4>
-  <% end %>
 </div>

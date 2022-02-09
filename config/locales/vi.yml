@@ -70,6 +70,8 @@ vi:
       next: "Sau"
   products:
     index:
+      price_lower_than: "Giá thấp hơn"
+      price_greater_than: "Giá cao hơn"
       products: "Sản phẩm"
       all_products: "Tất cả sản phẩm"
       list_products: "Danh sách sản phẩm"
@@ -167,12 +169,9 @@ vi:
         forbiden: "Bạn cần quyền admin để truy cập trang này!"
   users:
     show:
-      history_orders: "Lịch sử đơn hàng"
-      number: "Số thứ tự"
-      status: "Trạng thái"
-      created_at: "Ngày tạo"
-      total_price: "Tổng giá (vnđ)"
-      action: "Chức năng"
+      user_information: "Thông tin người dùng"
+      name: "Họ và tên "
+      email: "Email"
   time:
     formats:
       default: "%d-%m-%Y"
@@ -184,6 +183,14 @@ vi:
         delivered: "Đang chuyển"
         cancel: "Hủy đơn"
   orders:
+    index:
+      history_orders: "Lịch sử đơn hàng"
+      number: "Số thứ tự"
+      status: "Trạng thái"
+      created_at: "Ngày tạo"
+      total_price: "Tổng giá (vnđ)"
+      action: "Chức năng"
+      search_by_total_price: "Tìm kiếm bằng tổng giá"
     product_deleted: "%{count} sản phẩm không tồn tại!"
     invalid_quantity: "Sản phẩm: %{names} không đủ số lượng trọng hệ thống"
     new:
@@ -268,3 +275,5 @@ vi:
         not_receive_confirmation_instructions: "Không nhận được hướng dẫn xác nhận?"
         not_receive_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
         sign_in_with: "Đăng nhập bằng"
+  cancan:
+    permission_denied: "Bạn không có quyền truy cập trang này."

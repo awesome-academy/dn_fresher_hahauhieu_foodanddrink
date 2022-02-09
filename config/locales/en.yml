@@ -70,6 +70,8 @@ en:
       next: "Next"
   products:
     index:
+      price_lower_than: "Price lower than"
+      price_greater_than: "Price greater than"
       products: "Products"
       all_products: "All products"
       list_products: "List products"
@@ -167,12 +169,9 @@ en:
         forbiden: "You need administrator's permission to access this page!"
   users:
     show:
-      history_orders: "History orders"
-      number: "Number"
-      status: "Status"
-      created_at: "Create at"
-      total_price: "Total price ($)"
-      action: "Action"
+      user_information: "User information"
+      name: "Name"
+      email: "Email"
   time:
     formats:
       default: "%Y-%m-%d"
@@ -184,6 +183,14 @@ en:
         delivered: "Delivered"
         cancel: "Cancel"
   orders:
+    index:
+      history_orders: "History orders"
+      number: "Number"
+      status: "Status"
+      created_at: "Create at"
+      total_price: "Total price ($)"
+      action: "Action"
+      search_by_total_price: "Search by total price"
     product_deleted: "%{count} product does not exist"
     invalid_quantity: "%{names} not enough quantity in the system"
     new:

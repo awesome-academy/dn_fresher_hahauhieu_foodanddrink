@@ -9,7 +9,7 @@ class Ability
 
     return if user.blank?
 
-    can %i(read destroy), Order, user: user
+    can %i(read destroy new), Order, user: user
 
     return unless user.admin?
 
