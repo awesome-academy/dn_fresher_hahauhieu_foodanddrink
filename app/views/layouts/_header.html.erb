@@ -27,12 +27,12 @@
                   <%= link_to current_user.fullname, admin_root_path, class: "fa fa-user" %>
                 <% else %>
                   <%= link_to current_user.fullname, current_user, class: "fa fa-user" %>
+                  <span class="arrow_carrot-down"></span>
+                  <ul>
+                    <li><%= link_to t(".history"), orders_path %></li>
+                    <li><%= link_to t(".settings"), user_registration_path, method: :patch %></li>
+                  </ul>
                 <% end %>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                  <li><%= link_to t(".history"), current_user %></li>
-                  <li><%= link_to t(".settings"), user_registration_path, method: :patch %></li>
-                </ul>
               </div>
               <div class="header__top__right__auth">
                 <%= link_to  t(".logout"), logout_path, method: :delete, class: "fa fa-sign-out" %>
@@ -75,43 +75,6 @@
         </nav>
       </div>
       <div class="col-lg-3">
-        <div class="header__cart">
-          <ul>
-            <li>
-              <%= link_to "#" do %>
-                <i class="bi bi-cart4" style="font-size: 25px"></i>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="hero__categories">
-          <div class="hero__categories__all">
-            <span><%= t ".all_categories" %></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-9">
-        <div class="hero__search">
-          <div class="hero__search__form">
-            <%= form_tag(products_path, method: :get) do %>
-              <%= text_field_tag :term, params[:term], placeholder: t(".placeholder") %>
-              <button type="submit" class="site-btn"><%= t ".search" %></button>
-            <% end %>
-          </div>
-          <div class="hero__search__phone">
-            <div class="hero__search__phone__icon">
-              <i class="fa fa-phone text-dark text-center"></i>
-            </div>
-            <div class="hero__search__phone__text">
-              <h5><%= Settings.header.phone %></h5>
-              <span><%= t ".support" %></span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

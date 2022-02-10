@@ -5,6 +5,12 @@ class OrdersController < ApplicationController
   before_action :find_order, only: :show
   authorize_resource
 
+  def index
+    @q = @current_user.orders.ransack(params[:q])
+    @pagy, @user_orders = pagy(@q.result.sort_orders,
+                               items: Settings.per_page_10)
+  end
+
   def new
     if current_cart.empty?
       flash[:danger] = t ".please_buy_item"

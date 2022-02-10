@@ -1,0 +1,29 @@
+<% provide :title, t(".history_orders") %>
+<div class="container">
+  <h1 class="title"><%= t ".history_orders" %></h1>
+  <%= search_form_for @q, class: "form-inline row justify-content-center" do |f| %>
+    <%= f.search_field :total_price_eq, class: "form-control", placeholder: t(".search_by_total_price") %>
+    <%= f.submit %>
+  <% end %>
+  <% if @user_orders.any? %>
+    <table class="table table-hover">
+      <thead class="text-white" style="background-color:#7FAD39">
+        <tr>
+          <th><%= t ".number" %></th>
+          <th><%= sort_link(@q, :status, t(".status")) %></th>
+          <th><%= sort_link(@q, :created_at, t(".created_at"), default_order: :desc) %></th>
+          <th><%= sort_link(@q, :total_price, t(".total_price"), default_order: :desc) %></th>
+          <th><%= t ".action" %></th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render "history_order" %>
+      </tbody>
+    </table>
+    <div class="row justify-content-center">
+      <%== pagy_bootstrap_nav @pagy %>
+    </div>
+  <% else %>
+    <h4 class="text-danger text center"><%= t ".list_orders_empty" %></h4>
+  <% end %>
+</div>

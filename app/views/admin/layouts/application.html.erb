@@ -20,7 +20,7 @@
       <div class="main_container">
         <%= render "admin/layouts/sidebar" %>
         <%= render "admin/layouts/header" %>
-        <div class="right_col" role="main">
+        <div class="right_col pb-5" role="main">
           <% flash.each do |message_type, message| %>
             <div class="alert alert-<%= message_type %>"><%= message %></div>
           <% end %>

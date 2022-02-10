@@ -1,7 +1,9 @@
 <div class="col-md-3 left_col menu_fixed">
   <div class="left_col scroll-view side_bar_bg">
     <div class="navbar nav_title img_logo" style="border: 0;">
-        <%= image_tag "logo.png", class: "img_logo" %>
+      <%= link_to home_path do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
     </div>
     <div class="clearfix"></div>
     <div class="profile clearfix">

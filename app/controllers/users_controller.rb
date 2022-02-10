@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, :correct_user, only: :show
 
   def show
-    @pagy, @user_orders = pagy(@current_user.orders.sort_orders,
+    @q = @current_user.orders.ransack(params[:q])
+    @pagy, @user_orders = pagy(@q.result.sort_orders,
                                items: Settings.per_page_10)
   end
 
